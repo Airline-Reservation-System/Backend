@@ -1,0 +1,13 @@
+http://localhost:8089/passenger/updatePhno   //PUT
+http://localhost:8089/passenger/addPassenger  //POST
+http://localhost:8089/passenger/list  //GET
+http://localhost:8089/passenger/deleteUser/2   //DELETE
+
+
+
+create table passenger(pid int primary key,
+		pname varchar(100) not null,age int not null,
+		gender enum('male','female'),
+		address varchar(100) not null,
+		phno int not null,
+		email varchar(100) not null);
