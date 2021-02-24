@@ -1,9 +1,12 @@
 package com.bean;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ForeignKey;
 @Entity
 @Table(name="passenger")
 public class Passenger {
@@ -16,6 +19,7 @@ public class Passenger {
 	private String address;
 	private int phno;
 	private String email;
+	@OneToMany(mappedBy = "bpid",cascade = CascadeType.ALL)
 	public int getPid() {
 		return pid;
 	}
