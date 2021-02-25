@@ -2,9 +2,12 @@ package com.bean;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ForeignKey;
 @Entity
 public class Flight {
 	@Id
@@ -18,6 +21,7 @@ public class Flight {
     private int totalseat;
     private float price;
     private int avaliseat;
+    @OneToMany(mappedBy = "bfid",cascade = CascadeType.ALL)
 	public int getFid() {
 		return fid;
 	}
