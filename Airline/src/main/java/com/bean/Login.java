@@ -36,5 +36,10 @@ public class Login {
 	public void setTypeofuser(String typeofuser) {
 		this.typeofuser = typeofuser;
 	}
+	@Override
+	public String toString() {
+		return "Login [id=" + id + ", username=" + username + ", password=" + password + ", typeofuser=" + typeofuser
+				+ "]";
+	}
 	
 }

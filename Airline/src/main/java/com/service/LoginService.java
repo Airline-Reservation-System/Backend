@@ -13,41 +13,48 @@ import com.dao.LoginRepository;
 public class LoginService {
 	@Autowired
 	LoginRepository loginRepository;
-	
-	public List<Login> getAllUserData() {
-		return loginRepository.findAll();
-}
-	
+
+	public Login getAllUserData(String username, String password, String typeofuser) {
+		List<Login> a = loginRepository.findAll();
+
+		Login w = a.stream().filter(i -> username.equals(i.getUsername()) && password.equals(i.getPassword())
+				&& typeofuser.equals(i.getTypeofuser())).findAny().orElse(null);
+		System.out.println(w);
+		return w;
+	}
+
 	public String addUserData(Login l) {
 		Optional<Login> op = loginRepository.findById(l.getId());
-		if(op.isPresent()) {
+		if (op.isPresent()) {
 			return "Record already present";
-		}else {
-			Login log= loginRepository.save(l);			// save the records 
-			if(log!=null) {
+		} else {
+			Login log = loginRepository.save(l); // save the records
+			if (log != null) {
 				return "Record stored successfully";
-			}else {
+			} else {
 				return "Record didn't store";
 			}
 		}
-}
+	}
+
 	public String updatePasswordData(Login l) {
-		Optional<Login> obj	 = loginRepository.findById(l.getId());
-		if(obj.isPresent()) {
-			Login log	 = obj.get();
+		Optional<Login> obj = loginRepository.findById(l.getId());
+		if (obj.isPresent()) {
+			Login log = obj.get();
 			log.setPassword(l.getPassword());
-		loginRepository.saveAndFlush(log);
-		return "Record updated successfully";
-}else {
-	return "Record not present";
-}
-}
-	public String deleteUserData(int id) {
-		if(loginRepository.existsById(id)) {
-			loginRepository.deleteById(id);
-			return "Record deleted successfully";
-		}else {
+			loginRepository.saveAndFlush(log);
+			return "Record updated successfully";
+		} else {
 			return "Record not present";
 		}
-}
+	}
+
+	public String deleteUserData(int id) {
+		if (loginRepository.existsById(id)) {
+			loginRepository.deleteById(id);
+			return "Record deleted successfully";
+		} else {
+			return "Record not present";
+		}
+	}
 }

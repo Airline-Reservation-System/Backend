@@ -23,9 +23,9 @@ public class LoginController {
 	@Autowired
 	LoginService loginservice;
 	
-	@GetMapping(value = "user", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Login> getAllUser() {
-		return loginservice.getAllUserData();
+	@GetMapping(value = "user/{username}/{password}/{typeofuser}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Login getAllUser(@PathVariable("username") String username,@PathVariable("password") String password, @PathVariable("typeofuser") String typeofuser) {
+		return loginservice.getAllUserData(username,password,typeofuser);
 	}
 
 	@PostMapping(value = "addUser", consumes = MediaType.APPLICATION_JSON_VALUE)
