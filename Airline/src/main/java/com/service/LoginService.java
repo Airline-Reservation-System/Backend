@@ -14,13 +14,13 @@ public class LoginService {
 	@Autowired
 	LoginRepository loginRepository;
 
-	public Login getAllUserData(String username, String password, String typeofuser) {
+	public List<Login> getAllUserData() {
 		List<Login> a = loginRepository.findAll();
 
-		Login w = a.stream().filter(i -> username.equals(i.getUsername()) && password.equals(i.getPassword())
-				&& typeofuser.equals(i.getTypeofuser())).findAny().orElse(null);
-		System.out.println(w);
-		return w;
+		//Login w = a.stream().filter(i -> username.equals(i.getUsername()) && password.equals(i.getPassword())
+				//&& typeofuser.equals(i.getTypeofuser())).findAny().orElse(null);
+		//System.out.println(w);
+		return a;
 	}
 
 	public String addUserData(Login l) {

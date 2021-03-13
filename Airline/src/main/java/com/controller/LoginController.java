@@ -18,16 +18,16 @@ import com.bean.Login;
 import com.service.LoginService;
 
 @RestController
-@CrossOrigin
 @RequestMapping(value = "login")
+@CrossOrigin
 public class LoginController {
 
 	@Autowired
 	LoginService loginservice;
 	
-	@GetMapping(value = "user/{username}/{password}/{typeofuser}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Login getAllUser(@PathVariable("username") String username,@PathVariable("password") String password, @PathVariable("typeofuser") String typeofuser) {
-		return loginservice.getAllUserData(username,password,typeofuser);
+	@GetMapping(value = "user", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Login> getAllUser() {
+		return loginservice.getAllUserData();
 	}
 
 	@PostMapping(value = "addUser", consumes = MediaType.APPLICATION_JSON_VALUE)

@@ -16,9 +16,23 @@ public class Passenger {
 	private String pname;
 	private int age;
 	private String gender;
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	private String address;
 	private int phno;
 	private String email;
+	private String username;
+	private String password;
 	@OneToMany(mappedBy = "bpid",cascade = CascadeType.ALL)
 	public int getPid() {
 		return pid;
