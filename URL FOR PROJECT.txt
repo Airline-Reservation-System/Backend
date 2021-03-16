@@ -1,6 +1,0 @@
-               LOGIN URL
-
-1->http://localhost:8089/login/user------------->GET
-2->http://localhost:8089/login/addUser---------->POST
-3->http://localhost:8089/login/updatePassword--->PUT
-4->http://localhost:8089/login/deleteUser/1----->DELETE
