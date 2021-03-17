@@ -11,11 +11,9 @@ export class LogoutComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    sessionStorage.setItem('role', null);
-    sessionStorage.setItem('userId', null);
-    sessionStorage.setItem('username', null);
+  sessionStorage.clear();
     
-    this.router.navigate(['logout']);
+    this.router.navigate(['login']);
   }
   
 

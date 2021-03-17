@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
+// import { FormControl, FormGroup, NgForm } from '@angular/forms';
 
 import { Router } from '@angular/router';
 import { Login } from '../login';
@@ -12,11 +12,11 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent implements OnInit {
   user:Array<Login>=[]
-  
+  check:Boolean=false
   constructor(public loginSer:LoginService,public router:Router) { }
 
   ngOnInit(): void {
-    
+  
   }
 
   
@@ -24,23 +24,41 @@ export class LoginComponent implements OnInit {
    let user = userInfo.username;
    let pass = userInfo.password;
    let type = userInfo.typeofuser;
-   console.log(userInfo);
-   if(type==="admin")
-   {
-     this.router.navigate(["welcomeAdmin"])
-   }
-   /*this.loginSer.loadProductDetails(userInfo).subscribe(data=>{
+ 
+   this.loginSer.loadProductDetails().subscribe(data=>{
      this.user=data;
+    
      for(let var1 of this.user)
      {
-       if(var1.username==user && var1.password==pass && var1.typeofuser==type)
+
+       if(var1.userName==user && var1.userPassword==pass && var1.userType==type)
        {
-         this.router.navigate(["passenger"]);
-       }else{
-        alert("Invalid Username or Password") 
+        this.check=true
+        break
+        
+      
+        }
+        
+     }
+     if(this.check)
+     {
+       sessionStorage.setItem('username',user)
+       sessionStorage.setItem('typeofuser',type)
+       if(type==="admin")
+       {
+        this.router.navigate(["welcomeAdmin"]);
        }
+       else
+       {
+        this.router.navigate(["passenger"]);
+       }
+      
      } 
-   }); */
+     else
+     {
+       alert("Not Valid")
+     }
+   }); 
 
   }
   

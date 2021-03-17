@@ -11,9 +11,9 @@ export class LoginService {
 
   constructor(public httpClient:HttpClient) { }
 
-  loadProductDetails(userInfo:any):Observable<Login[]>{
+  loadProductDetails():Observable<Login[]>{
     //console.log(userInfo);
-    return this.httpClient.get<Login[]>("http://localhost:9090/login/user"); 
+    return this.httpClient.get<Login[]>("http://localhost:9092/users/readAllUsers"); 
     
    
     

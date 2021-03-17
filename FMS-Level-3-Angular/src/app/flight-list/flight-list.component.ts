@@ -12,9 +12,10 @@ import { Router } from '@angular/router';
 export class FlightListComponent implements OnInit {
   flights:Observable<Flight[]>;
   constructor(private flightService: FlightService, private router: Router) { }
-
+role:string=""
   ngOnInit(){
     this.reloadData();
+    this.role = this.readLocalStorageValue('typeofuser');
   }
   reloadData()
   {
@@ -39,4 +40,7 @@ export class FlightListComponent implements OnInit {
   {
     this.router.navigate(['updateFlight',flightNo]);
   }
+  readLocalStorageValue(key) {
+    return sessionStorage.getItem(key);
+}
 }

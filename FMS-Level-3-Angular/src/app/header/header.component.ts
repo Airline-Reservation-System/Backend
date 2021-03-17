@@ -16,17 +16,18 @@ export class HeaderComponent implements OnInit{
     constructor(){}
 
     ngOnInit(){
-        this.user=false;
-        this.admin=false;
-        if(sessionStorage.getItem('role')==='user'){
-            this.user=true;
-        }else if(sessionStorage.getItem('role')==='admin'){
-            this.admin=true;
-        }
-         //this.buttonFlag=this.AuthenticationService.isUserLoggedIn();
-        this.username=sessionStorage.getItem('username');
-        if(this.username!=null)
-            this.username=this.username.toUpperCase();
+        // this.user=false;
+        // this.admin=false;
+        // if(sessionStorage.getItem('role')==='user'){
+        //     this.user=true;
+        // }else if(sessionStorage.getItem('role')==='admin'){
+        //     this.admin=true;
+        // }
+        //  //this.buttonFlag=this.AuthenticationService.isUserLoggedIn();
+        // this.username=sessionStorage.getItem('username');
+        // if(this.username!=null)
+        //     this.username=this.username.toUpperCase();
+        console.log("header")
     }
 
 }

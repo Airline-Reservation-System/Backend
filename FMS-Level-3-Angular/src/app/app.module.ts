@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateBookingComponent } from './update-booking/update-booking.component';
 import { HomeComponent } from './home/home.component';
 //import { LoginComponent } from './login/login.component';
-//import { LogoutComponent } from './logout/logout.component';
+import { LogoutComponent } from '../app/logout/logout.component';
 //import { SignupComponent } from './signup/signup.component';
 import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
 import { CreateAirportComponent } from './create-airport/create-airport.component';
@@ -35,7 +35,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { LogoutComponent } from './logout/logout.component';
+import { WelcomePassengerComponent } from './welcome-passenger/welcome-passenger.component';
+
 //import { LoginComponent } from './login/login.component';
 
 
@@ -51,7 +52,7 @@ import { LogoutComponent } from './logout/logout.component';
     UpdateBookingComponent,
     HomeComponent,
     //LoginComponent,
-    //LogoutComponent,
+    LogoutComponent,
     //SignupComponent,
     CreateAirportComponent,
     AirportListComponent,
@@ -72,6 +73,7 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     SignupComponent,
     LogoutComponent,
+    WelcomePassengerComponent,
     //LoginComponent
   ],
   
