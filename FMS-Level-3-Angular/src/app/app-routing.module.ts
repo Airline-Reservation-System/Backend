@@ -6,7 +6,7 @@ import { UpdateBookingComponent } from './update-booking/update-booking.componen
 import { BookingDetailsComponent } from './booking-details/booking-details.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-//import { LogoutComponent } from './logout/logout.component';
+import { LogoutComponent } from './logout/logout.component';
 //import { SignupComponent } from './signup/signup.component';
 import { AirportListComponent } from './airport-list/airport-list.component';
 import { CreateAirportComponent } from './create-airport/create-airport.component';
@@ -36,7 +36,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  //{path: 'logout', component: LogoutComponent},
+  {path: 'logout', component: LogoutComponent},
   //{path: 'signup', component: SignupComponent},
   {path: 'airports', component: AirportListComponent },
   {path: 'addAirport', component: CreateAirportComponent },
