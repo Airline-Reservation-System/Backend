@@ -11,6 +11,7 @@ export class WelcomeAdminComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.ngOnInit()
   }
 
   addScheduledFlight(): void{

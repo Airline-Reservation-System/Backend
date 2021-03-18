@@ -1,6 +1,6 @@
 <!-- HEADER -->
 <nav class="navbar navbar-expand-lg navbar-light bg-transparent" style="background-color: black;">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand"  (click)="new()">
    <!-- <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon> -->
 
       Flight Reservation System
@@ -28,16 +28,16 @@
               <a href="login">LOG IN</a>
           </button>
       </li>  -->
-      <!-- <li *ngIf="buttonFlag" class="nav-item">
-          <button class="btn btn-danger" [routerLink]="['login']">
+      <li class="nav-item">
+          <button  *ngIf="role=='admin' || role=='passenger' " class="btn btn-danger" >
               <a href="logout">
                 
-                LOG OU
+                LOG OUT
               
               
               </a>
           </button>
-      </li> -->
+      </li>
     </ul>
   </div>
 </nav>

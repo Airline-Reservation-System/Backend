@@ -8,11 +8,14 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @SpringBootApplication
 @ComponentScan("com.org.model")
 @ComponentScan("com.org.dao")
 @ComponentScan("com.org.service")
 @ComponentScan("com.org.controller")
+@EnableSwagger2
 public class FmsSpringBootBackendApplication {
 
 	public static void main(String[] args) {

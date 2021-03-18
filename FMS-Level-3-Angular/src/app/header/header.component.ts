@@ -1,19 +1,20 @@
 import {Component, OnInit} from '@angular/core';
 //import { AuthenticationService } from './_service/app.authenticationservice';
-
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
-
+     role:string=""
     buttonFlag:boolean;
     username:string;
     user:boolean;
     admin:boolean;
 
-    constructor(){}
+   
+    constructor(public router:Router) { }
 
     ngOnInit(){
         // this.user=false;
@@ -27,7 +28,25 @@ export class HeaderComponent implements OnInit{
         // this.username=sessionStorage.getItem('username');
         // if(this.username!=null)
         //     this.username=this.username.toUpperCase();
-        console.log("header")
+        this.role = this.readLocalStorageValue('typeofuser');
+        
     }
-
+    readLocalStorageValue(key) {
+        return sessionStorage.getItem(key);
+    }
+    new()
+    {
+        if(this.role ==='admin')
+        {
+            this.router.navigate(["welcomeAdmin"]);
+        }
+        else if(this.role ==='passenger')
+        {
+            this.router.navigate(["welcomePassenger"]);
+        }
+        else
+        {
+            this.router.navigate(["home"]);
+        }
+    }
 }
