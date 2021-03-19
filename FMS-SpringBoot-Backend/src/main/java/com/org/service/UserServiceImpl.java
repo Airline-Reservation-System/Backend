@@ -1,7 +1,7 @@
 package com.org.service;
 
 import java.math.BigInteger;
-
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +24,10 @@ public class UserServiceImpl implements UserService {
 	public ResponseEntity<?> createUser(Users newUser) {
 		// TODO Auto-generated method stub
 		Optional<Users> findUserById = userDao.findById(newUser.getUserId());
+		Iterable<Users> all=userDao.findAll();
+		
+	
+		
 		try {
 			if (!findUserById.isPresent()) {
 				userDao.save(newUser);

@@ -3,12 +3,15 @@ package com.org.model;
 import java.math.BigInteger;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Users {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private BigInteger userId;
 	private String userName;
 	private String userPassword;
@@ -81,4 +84,21 @@ public class Users {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
+
+	@Override
+	public String toString() {
+		return "Users [userId=" + userId + ", userName=" + userName + ", userPassword=" + userPassword + ", userPhone="
+				+ userPhone + ", userEmail=" + userEmail + ", userType=" + userType + "]";
+	}
+
+	public boolean hasNext() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Object next() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

@@ -7,7 +7,7 @@ import { BookingDetailsComponent } from './booking-details/booking-details.compo
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
-//import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './signup/signup.component';
 import { AirportListComponent } from './airport-list/airport-list.component';
 import { CreateAirportComponent } from './create-airport/create-airport.component';
 import { UpdateAirportComponent } from './update-airport/update-airport.component';
@@ -26,7 +26,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import {WelcomePassengerComponent} from './welcome-passenger/welcome-passenger.component';
-
+import {BookingConfirmedComponent} from './booking-confirmed/booking-confirmed.component';
 const routes: Routes = [
   {path: '', redirectTo: 'booking',pathMatch: 'full'},
   {path: 'bookings', component: BookingListComponent},
@@ -37,7 +37,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
-  //{path: 'signup', component: SignupComponent},
+  {path: 'signup', component: SignupComponent},
   {path: 'airports', component: AirportListComponent },
   {path: 'addAirport', component: CreateAirportComponent },
   {path: 'update/:airportCode', component: UpdateAirportComponent },
@@ -55,7 +55,8 @@ const routes: Routes = [
   {path: 'updateUser/:id', component: UpdateUserComponent},
   {path: 'userDetails/:id', component: UserDetailsComponent},
   {path: 'users', component: ListUserComponent},
-  {path: 'welcomePassenger',component:WelcomePassengerComponent}
+  {path: 'welcomePassenger',component:WelcomePassengerComponent},
+  {path: 'bookingConfirmed',component:BookingConfirmedComponent}
 
 ];
 

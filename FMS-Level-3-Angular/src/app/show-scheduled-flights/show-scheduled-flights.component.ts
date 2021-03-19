@@ -16,11 +16,12 @@ export class ShowScheduledFlightsComponent implements OnInit {
   scheduleFlights: Observable<ScheduledFlight[]>;
 
   constructor(private router: Router, private service: ScheduledFlightService) { }
-
+  role:string=""
   ngOnInit(): void {
     this.service.showScheduleFlights().subscribe(
       (data:Observable<ScheduledFlight[]>)=>this.scheduleFlights=data
     );
+    this.role = this.readLocalStorageValue('typeofuser');
   }
 
   removeScheduleFlight(scheduleFlightId:number){
@@ -46,5 +47,8 @@ export class ShowScheduledFlightsComponent implements OnInit {
     this.router.navigate(['/scheduledFlight/search']);
 
   }
+  readLocalStorageValue(key) {
+    return sessionStorage.getItem(key);
+}
 
 }

@@ -15,14 +15,16 @@ export class AddScheduledFlightComponent implements OnInit {
   deptDateTime:string;
   arrDateTime:string;
 
+  role:string=""
 
   scheduleFlight:ScheduledFlight={scheduleFlightId:null, availableSeats:null, flight:null,schedule:null};
 
   constructor(private scheduleFlightService: ScheduledFlightService, private router: Router, private route: ActivatedRoute) {
-
+    this.role = this.readLocalStorageValue('typeofuser');
   }
 
   ngOnInit(): void {
+
   }
 
   addScheduleFlight(scheduleFlight,sa,da,ddt,adt){
@@ -78,5 +80,8 @@ export class AddScheduledFlightComponent implements OnInit {
 
       this.router.navigate(['/scheduledFlight/search']);
 
+  }
+  readLocalStorageValue(key) {
+    return sessionStorage.getItem(key);
   }
 }

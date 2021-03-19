@@ -56,12 +56,15 @@ export class LoginComponent implements OnInit {
      } 
      else
      {
-       alert("Not Valid")
+       alert("Username or password not valid")
      }
    }); 
 
   }
   
-
+  signuplink()
+  {
+    this.router.navigate(["signup"]);
+  }
 }
 

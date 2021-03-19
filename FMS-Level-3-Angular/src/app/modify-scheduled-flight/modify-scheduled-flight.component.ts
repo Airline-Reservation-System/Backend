@@ -19,11 +19,13 @@ export class ModifyScheduledFlightComponent implements OnInit {
   //  mSchedule: number;
   mScheduleFlight:ScheduledFlight;
 
+  role:string=""
 
   constructor(private service: ScheduledFlightService, private router: Router) { }
-
   ngOnInit(): void {
     this.scheduleFlight=new ScheduledFlight();
+  this.role = this.readLocalStorageValue('typeofuser');
+
   }
   searchScheduleFlight(scheduleFlightId:number):any{
     this.show=true;
@@ -73,6 +75,8 @@ validateId(){
         this.router.navigate(['/scheduledFlight/search']);
 
     }
-
+    readLocalStorageValue(key) {
+      return sessionStorage.getItem(key);
+  }
 
 }
