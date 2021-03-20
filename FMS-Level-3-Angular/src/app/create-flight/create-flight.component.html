@@ -13,13 +13,18 @@
 
     <div class="form-group">
       <label for="name">Carrier Name</label>
-      <input type="text" placeholder="Carrier Name" #carrierName="ngModel" [class.is-invalid]="carrierName.invalid && carrierName.touched" class="form-control" id="carrierName" required [(ngModel)]="flight.carrierName" name="carrierName">
-      <small class="text-danger" [class.d-none]="carrierName.valid || carrierName.untouched">Carrier name is Required</small>
+      <select type="text" placeholder="Carrier Name" #carrierName="ngModel" [class.is-invalid]="carrierName.invalid && carrierName.touched" class="form-control" id="carrierName" required [(ngModel)]="flight.carrierName" name="carrierName">
+        <option value="Indigo">Indigo</option>
+        <option value="Divyam">Divyam</option>
+        <option value="Airindia">Airindia</option>
+       <!-- <option *ngFor="let carrier of carrierName">{{carrier}}</option>-->
+        </select>
+          <small class="text-danger" [class.d-none]="carrierName.valid || carrierName.untouched">Carrier name is Required</small>
     </div>
 
     <div class="form-group">
       <label for="name">Flight Model</label>
-      <input type="text" placeholder="Flight MOdel" #flightModel="ngModel" [class.is-invalid]="flightModel.invalid && flightModel.touched" class="form-control" id="flightModel" required [(ngModel)]="flight.flightModel" name="flightModel">
+      <input type="text" placeholder="Flight Model" #flightModel="ngModel" [class.is-invalid]="flightModel.invalid && flightModel.touched" class="form-control" id="flightModel" required [(ngModel)]="flight.flightModel" name="flightModel">
       <small class="text-danger" [class.d-none]="flightModel.valid || flightModel.untouched">Model is Required</small>
     </div>
     <div class="form-group">
