@@ -7,6 +7,6 @@ import { Observable } from 'rxjs';
 export class SignupService {
   constructor(public httpClient:HttpClient) { }
   storeUsersInfo(userRef:any):Observable<string>{
-    return this.httpClient.post("http://localhost:9092/users/createUser",userRef,{responseType:'text'})
+    return this.httpClient.post("http://localhost:9090/users/createUser",userRef,{responseType:'text'})
   }
 }

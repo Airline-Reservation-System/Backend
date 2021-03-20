@@ -9,7 +9,7 @@ import { Airport } from '../model/airport.component';
 
 export class AirportService{
 
-  private baseUrl = 'http://localhost:9092/airport';
+  private baseUrl = 'http://localhost:9090/airport';
   constructor(private httpClient:HttpClient){}
 
   //Returns list of all airports

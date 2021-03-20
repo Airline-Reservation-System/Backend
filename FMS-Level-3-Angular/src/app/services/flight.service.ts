@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class FlightService {
-  private Url = 'http://localhost:9092/flight';
+  private Url = 'http://localhost:9090/flight';
   constructor(private http: HttpClient) { }
   viewFlight(flightNo: number): Observable<any> {
     return this.http.get(`${this.Url}/viewFlight/${flightNo}`);

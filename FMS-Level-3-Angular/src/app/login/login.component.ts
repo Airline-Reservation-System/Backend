@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   
   checkUser(userInfo:any){
+    console.log(userInfo)
    let user = userInfo.username;
    let pass = userInfo.password;
    let type = userInfo.typeofuser;

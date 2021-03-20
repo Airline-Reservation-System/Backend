@@ -26,19 +26,19 @@ export class ScheduledFlightService {
     console.log(scheduleFlight);
     console.log(params.toString());
    // console.log(form);
-    return this.http.post('http://localhost:9092/scheduledFlight/add?',form,{params});
+    return this.http.post('http://localhost:9090/scheduledFlight/add?',form,{params});
   }
 
   searchScheduledFlight(scheduledFlightId: number) {
-    return this.http.get('http://localhost:9092/scheduledFlight/search?flightId='+scheduledFlightId);
+    return this.http.get('http://localhost:9090/scheduledFlight/search?flightId='+scheduledFlightId);
   }
 
   showScheduleFlights(): Observable<any> {
-    return this.http.get('http://localhost:9092/scheduledFlight/viewAll');
+    return this.http.get('http://localhost:9090/scheduledFlight/viewAll');
   }
 
   removeScheduleFlight(scheduleFlightId:number){
-    return this.http.delete('http://localhost:9092/scheduledFlight/delete?flightId='+scheduleFlightId);
+    return this.http.delete('http://localhost:9090/scheduledFlight/delete?flightId='+scheduleFlightId);
  }
 
  modifyScheduledFlight(scheduleFlight:ScheduledFlight){
@@ -47,7 +47,7 @@ export class ScheduledFlightService {
    mForm.append("schedule",String(scheduleFlight.schedule))
    mForm.append("flight",String(scheduleFlight.flight))
    mForm.append("availableSeats",String(scheduleFlight.availableSeats))
-   return this.http.put('http://localhost:9092/scheduledFlight/modify?',mForm);
+   return this.http.put('http://localhost:9090/scheduledFlight/modify?',mForm);
  }
 
 }
