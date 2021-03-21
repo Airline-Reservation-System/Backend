@@ -28,6 +28,7 @@ export class CreateBookingComponent implements OnInit {
     error => console.log(error));
     this.booking = new Booking();
     this.gotoList();
+    alert("Status :"+ " Your Booking has been Confirmed !!");
   }
 
   onSubmit() {
@@ -37,6 +38,7 @@ export class CreateBookingComponent implements OnInit {
 
   gotoList() {
     this.router.navigate(['/bookings']);
+
   }
 
 }

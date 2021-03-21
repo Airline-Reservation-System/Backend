@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit{
 
     ngOnInit(){
         // this.user=false;
+        
         // this.admin=false;
         // if(sessionStorage.getItem('role')==='user'){
         //     this.user=true;
@@ -29,6 +30,7 @@ export class HeaderComponent implements OnInit{
         // if(this.username!=null)
         //     this.username=this.username.toUpperCase();
         this.role = this.readLocalStorageValue('typeofuser');
+       
         
     }
     readLocalStorageValue(key) {
@@ -52,5 +54,6 @@ export class HeaderComponent implements OnInit{
     logout()
     {   sessionStorage.clear()
         this.router.navigate(["login"]);
+        this.ngOnInit();
     }
 }

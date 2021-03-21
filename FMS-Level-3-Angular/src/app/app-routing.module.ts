@@ -26,7 +26,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import {WelcomePassengerComponent} from './welcome-passenger/welcome-passenger.component';
-import {BookingConfirmedComponent} from './booking-confirmed/booking-confirmed.component';
+
 const routes: Routes = [
   {path: '', redirectTo: 'booking',pathMatch: 'full'},
   {path: 'bookings', component: BookingListComponent},
@@ -56,7 +56,7 @@ const routes: Routes = [
   {path: 'userDetails/:id', component: UserDetailsComponent},
   {path: 'users', component: ListUserComponent},
   {path: 'welcomePassenger',component:WelcomePassengerComponent},
-  {path: 'bookingConfirmed',component:BookingConfirmedComponent}
+  
 
 ];
 
