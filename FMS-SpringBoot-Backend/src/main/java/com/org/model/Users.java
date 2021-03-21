@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Users {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private BigInteger userId;
 	private String userName;
 	private String userPassword;

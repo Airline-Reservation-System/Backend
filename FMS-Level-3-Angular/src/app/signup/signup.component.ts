@@ -9,12 +9,12 @@ import { SignupService } from '../services/signup.service';
 })
 export class SignupComponent implements OnInit {
   usersInfo = new FormGroup({
-    id:new FormControl(),
-    name:new  FormControl(),
-    username:new FormControl(),
-    password: new FormControl(),
-    email:new FormControl(),
-    phone:new FormControl(),
+    userId:new FormControl(),
+    userName:new FormControl(),
+    userPassword: new FormControl(),
+    userEmail:new FormControl(),
+    userPhone:new FormControl(),
+    userType:new FormControl()
    
     
   })
@@ -25,9 +25,9 @@ export class SignupComponent implements OnInit {
   storeUsersDetails(){
     let userRef=this.usersInfo.value
     console.log(userRef)
+    
     this.signupService.storeUsersInfo(userRef).subscribe(result=>this.msg=result)
     
     this.router.navigate(['/login']);
   }
   }
- 

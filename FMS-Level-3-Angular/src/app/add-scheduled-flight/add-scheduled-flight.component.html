@@ -10,7 +10,7 @@ a{
 <div class="view" style="background-image: url('assets/aeroplane-bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
   <nav class="navbar navbar-dark">
     <div class="navbar-brand">
-      <img src="assets/aeroplane.png" width="40" height="40" class="d-inline-block align-top" alt="">
+     <!-- <button type = "button" class ="btn btn-primary pull-right" style="margin-right: 10px;">HOME</button> -->
     
   </div>
   <div>
@@ -30,9 +30,7 @@ a{
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="scheduledFlight/search" (click)="search()">SEARCH</a>
     </li>
-    <li class="nav-item">
-      <a *ngIf="role==='admin'" class="nav-link" data-toggle="tab" href="scheduledFlight/modify" (click)="search()">MODIFY</a>
-    </li>
+    
   </ul>
  <br><br>
   
@@ -52,10 +50,10 @@ a{
       <small *ngIf="airportValid" style="color: red;">Source and Destination cannot be the same</small>
       <br>
       <label>Departure Time :</label>
-      <input  #c   class="dateselect" type="text"  class="form-control" required>
+      <input  #c   type="datetime-local"   class="form-control" required>
       <br>
       <label>Arrival Time :</label>
-      <input  #d  type="text" class="form-control" required>
+      <input  #d  type="datetime-local" class="form-control" required>
       <br>
       <label>Flight ID: </label>
           <input type="number" class="form-control"  [(ngModel)]="scheduleFlight.flight" [ngModelOptions]="{standalone: true}" required>

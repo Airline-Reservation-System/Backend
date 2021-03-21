@@ -9,7 +9,7 @@
 <div class="view" style="background-image: url('assets/aeroplane-bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 <nav class="navbar navbar-dark">
     <div class="navbar-brand">
-      <img src="assets/aeroplane.png" width="40" height="40" class="d-inline-block align-top" alt="">
+     <!-- <button type = "button" class ="btn btn-primary pull-right" style="margin-right: 10px;">HOME</button> -->
         </div>
     <div>
   
@@ -27,9 +27,7 @@
         <li class="nav-item">
           <a *ngIf="role==='admin'" class="nav-link active" data-toggle="tab" href="scheduledFlight/search" (click)="search()">SEARCH</a>
         </li>
-        <li class="nav-item">
-          <a *ngIf="role==='admin'" class="nav-link" data-toggle="tab" href="scheduledFlight/modify" (click)="search()">MODIFY</a>
-        </li>
+        
     </ul>
       <br><br>
       

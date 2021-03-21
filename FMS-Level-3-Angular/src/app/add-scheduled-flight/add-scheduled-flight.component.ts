@@ -28,13 +28,14 @@ export class AddScheduledFlightComponent implements OnInit {
   }
 
   addScheduleFlight(scheduleFlight,sa,da,ddt,adt){
+    console.log("add")
    // alert(sa+da+ ddt+ adt);
     this.srcAirport=sa;
     this.dstnAirport=da;
     this.deptDateTime=ddt;
     this.arrDateTime=adt;
     this.scheduleFlightService.addScheduleFlight( scheduleFlight,sa,da,ddt,adt).subscribe();
-    alert("Schedule Flight added");
+    
   }
 
   idValid:boolean=false;

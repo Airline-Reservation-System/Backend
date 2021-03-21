@@ -13,6 +13,10 @@ export class ScheduledFlightService {
   }
 
   addScheduleFlight(scheduleFlight:ScheduledFlight,srcAirport,dstnAirport,deptDateTime,arrDateTime){
+    console.log(scheduleFlight.scheduleFlightId)
+    console.log(scheduleFlight.availableSeats)
+    console.log(scheduleFlight.flight)
+    console.log(scheduleFlight.schedule)
     let form=new FormData();
     form.append("scheduleFlightId", String(scheduleFlight.scheduleFlightId))
     form.append("availableSeats",String(scheduleFlight.availableSeats))
@@ -25,7 +29,7 @@ export class ScheduledFlightService {
     .set('arrDateTime', arrDateTime);
     console.log(scheduleFlight);
     console.log(params.toString());
-   // console.log(form);
+   console.log(form);
     return this.http.post('http://localhost:9090/scheduledFlight/add?',form,{params});
   }
 

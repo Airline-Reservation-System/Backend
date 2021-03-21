@@ -23,10 +23,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public ResponseEntity<?> createUser(Users newUser) {
 		// TODO Auto-generated method stub
-		Optional<Users> findUserById = userDao.findById(newUser.getUserId());
-		Iterable<Users> all=userDao.findAll();
-		
-	
+		Optional<Users> findUserById = userDao.findById(newUser.getUserId());	
 		
 		try {
 			if (!findUserById.isPresent()) {
