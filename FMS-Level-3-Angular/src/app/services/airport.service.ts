@@ -12,7 +12,7 @@ export class AirportService{
   private baseUrl = 'http://localhost:9090/airport';
   constructor(private httpClient:HttpClient){}
 
-  //Returns list of all airports
+  
   getAllAirports():Observable<Airport[]>{
       return this.httpClient.get<Airport[]>(`${this.baseUrl}/allAirport`);
   }

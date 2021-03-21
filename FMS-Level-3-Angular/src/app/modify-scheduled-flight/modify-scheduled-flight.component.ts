@@ -12,11 +12,6 @@ export class ModifyScheduledFlightComponent implements OnInit {
   scheduleFlight:ScheduledFlight;
   scheduleFlightId:number;
   show:boolean=false;
-  //  modifyScheduleFlight: ScheduledFlight;
-  //  mScheduleFlightId: number;
-  //  mFlight: number;
-  //  mAvailableSeats: number;
-  //  mSchedule: number;
   mScheduleFlight:ScheduledFlight;
 
   role:string=""
