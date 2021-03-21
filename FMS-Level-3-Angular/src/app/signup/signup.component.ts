@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup ,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { SignupService } from '../services/signup.service';
 @Component({
   selector: 'app-signup',
@@ -9,12 +10,12 @@ import { SignupService } from '../services/signup.service';
 })
 export class SignupComponent implements OnInit {
   usersInfo = new FormGroup({
-    userId:new FormControl(),
-    userName:new FormControl(),
-    userPassword: new FormControl(),
-    userEmail:new FormControl(),
-    userPhone:new FormControl(),
-    userType:new FormControl()
+    userId:new FormControl('', [Validators.required]),
+    userName:new FormControl('', [Validators.required]),
+    userPassword: new FormControl('', [Validators.required]),
+    userEmail:new FormControl('', [Validators.required]),
+    userPhone:new FormControl('', [Validators.required]),
+    userType:new FormControl('', [Validators.required])
    
     
   })
