@@ -27,6 +27,7 @@ export class BookingListComponent implements OnInit {
       data=> {
         console.log(data);
         this.reloadData();
+        alert("Status :"+ " Your Booking has been Deleted !!");
       },
       error => console.log(error)
     );

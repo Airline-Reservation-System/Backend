@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-//import { AuthenticationService } from './_service/app.authenticationservice';
 import { Router } from '@angular/router';
 @Component({
     selector: 'app-header',
@@ -17,18 +16,8 @@ export class HeaderComponent implements OnInit{
     constructor(public router:Router) { }
 
     ngOnInit(){
-        // this.user=false;
-        // this.admin=false;
-        // if(sessionStorage.getItem('role')==='user'){
-        //     this.user=true;
-        // }else if(sessionStorage.getItem('role')==='admin'){
-        //     this.admin=true;
-        // }
-        //  //this.buttonFlag=this.AuthenticationService.isUserLoggedIn();
-        // this.username=sessionStorage.getItem('username');
-        // if(this.username!=null)
-        //     this.username=this.username.toUpperCase();
         this.role = this.readLocalStorageValue('typeofuser');
+       
         
     }
     readLocalStorageValue(key) {
@@ -52,5 +41,6 @@ export class HeaderComponent implements OnInit{
     logout()
     {   sessionStorage.clear()
         this.router.navigate(["login"]);
+        this.ngOnInit();
     }
 }

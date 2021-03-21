@@ -13,9 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateBookingComponent } from './update-booking/update-booking.component';
 import { HomeComponent } from './home/home.component';
-//import { LoginComponent } from './login/login.component';
+
 import { LogoutComponent } from '../app/logout/logout.component';
-//import { SignupComponent } from './signup/signup.component';
+
 import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
 import { CreateAirportComponent } from './create-airport/create-airport.component';
 import { AirportListComponent } from './airport-list/airport-list.component';
@@ -37,7 +37,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { WelcomePassengerComponent } from './welcome-passenger/welcome-passenger.component';
 
-//import { LoginComponent } from './login/login.component';
+
 
 
 
@@ -51,9 +51,9 @@ import { WelcomePassengerComponent } from './welcome-passenger/welcome-passenger
     BookingDetailsComponent,
     UpdateBookingComponent,
     HomeComponent,
-    //LoginComponent,
+    
     LogoutComponent,
-    //SignupComponent,
+    
     CreateAirportComponent,
     AirportListComponent,
     AirportDetailsComponent,
@@ -74,7 +74,7 @@ import { WelcomePassengerComponent } from './welcome-passenger/welcome-passenger
     SignupComponent,
     LogoutComponent,
     WelcomePassengerComponent,
-    //LoginComponent
+    
   ],
   
   imports: [
