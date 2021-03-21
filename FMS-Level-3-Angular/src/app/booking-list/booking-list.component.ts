@@ -33,6 +33,7 @@ export class BookingListComponent implements OnInit {
   }
 
   bookingDetails(bookingId: number) {
+    console.log(bookingId)
     this.router.navigate(['bookingDetails', bookingId]);
   }
 

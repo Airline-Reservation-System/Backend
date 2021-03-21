@@ -20,7 +20,7 @@ export class BookingDetailsComponent implements OnInit {
     this.booking = new Booking();
 
     this.bookingId = this.route.snapshot.params['bookingId'];
-
+    console.log(this.bookingId);
     this.bookingService.getBooking(this.bookingId)
     .subscribe(data => {
       console.log(data);

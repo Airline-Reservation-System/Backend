@@ -49,4 +49,8 @@ export class HeaderComponent implements OnInit{
             this.router.navigate(["home"]);
         }
     }
+    logout()
+    {   sessionStorage.clear()
+        this.router.navigate(["login"]);
+    }
 }

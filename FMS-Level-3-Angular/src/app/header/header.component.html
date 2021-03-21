@@ -29,13 +29,13 @@
           </button>
       </li>  -->
       <li class="nav-item">
-          <button  *ngIf="role=='admin' || role=='passenger' " class="btn btn-danger" >
-              <a href="logout">
+          <button  (click)="logout()" *ngIf="role=='admin' || role=='passenger' " class="btn btn-danger" >
+              <!-- <a href="logout"> -->
                 
                 LOG OUT
               
               
-              </a>
+              <!-- </a> -->
           </button>
       </li>
     </ul>
