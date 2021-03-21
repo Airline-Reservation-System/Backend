@@ -12,7 +12,9 @@ export class LoginService {
   constructor(public httpClient:HttpClient) { }
 
   loadProductDetails():Observable<Login[]>{
-    
+
+    //console.log(userInfo);
+ 
     return this.httpClient.get<Login[]>("http://localhost:9090/users/readAllUsers"); 
     
    
