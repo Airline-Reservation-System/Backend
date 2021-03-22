@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup ,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from '../model/user.component';
 
 import { SignupService } from '../services/signup.service';
 @Component({
@@ -13,7 +14,9 @@ export class SignupComponent implements OnInit {
     userId:new FormControl('', [Validators.required]),
     userName:new FormControl('', [Validators.required]),
     userPassword: new FormControl('', [Validators.required]),
-    userEmail:new FormControl('', [Validators.required]),
+    userEmail:new FormControl('', [ 
+      Validators.required,
+      Validators.pattern("[^ @]@[^ @]")]),
     userPhone:new FormControl('', [Validators.required]),
     userType:new FormControl('', [Validators.required])
    
@@ -30,5 +33,7 @@ export class SignupComponent implements OnInit {
     this.signupService.storeUsersInfo(userRef).subscribe(result=>this.msg=result)
     
     this.router.navigate(['/login']);
-  }
+  } 
+
+
   }
