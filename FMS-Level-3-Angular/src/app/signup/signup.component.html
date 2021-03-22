@@ -1,9 +1,24 @@
+<style>
+    .wrapper{
+    min-height:90vh;
+  }
+  a{
+     color:  #FF8040;
+    }
+    
+    </style>
+<div class="view" style="background-image: url('assets/aeroplane-bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <nav class="navbar navbar-dark">
 <div>
-    <header class = "jumbotron">
+    <div class="navbar-brand">
+        
+    </div>
+<div>
+    
         <div class = "container">
             <div class = "row">
                 
-                    <div style = "width:50%; margin: 5px auto;">
+                    <div style = "width:400%; margin: 10px auto;">
                         <form  [formGroup]="usersInfo" (ngSubmit)="storeUsersDetails()">
                             <h1 style = "text-align: center">Sign Up</h1>
                             <div class = "form-group">
@@ -56,7 +71,7 @@
                                 <input class = "form-control" type = "number" formControlName = "userPhone" placeholder = "Phone">
                                 <div *ngIf="usersInfo.controls['userPhone'].touched &&
                                     usersInfo.controls['userPhone'].invalid"
-                                    class="alert-danger">
+                                    class="alert-danger" >
                                     <div *ngIf="usersInfo.controls['userPhone'].errors &&
                                     usersInfo.controls['userPhone'].errors.required">
                                         Phone number  is required.</div>
@@ -70,12 +85,12 @@
                                     <option value="passenger">passenger</option>
                                 </select>
                             </div>
-                        <button type = "submit" class = "btn btn-primary" (click)="storeUsersDetails()"> Sign Up </button>&nbsp;<br/><br/>
+                        <button  type = "submit" class = "btn btn-primary" (click)="storeUsersDetails()"> Sign Up </button>&nbsp;<br/><br/>
                    
                 </form>
-            <!--<a href = "login" style="color:blue">Go Back</a> -->
+            
             </div>
         </div>
     </div>
-    </header>
+    
 </div>
